@@ -3,6 +3,8 @@ Changelog
 
 Unreleased
 ----------
+### Breaking
+* Update react-docgen to 5.*.*. This is a breaking change as react-docgen only supports node 8.10 and up. Terra dev site currently supports 8.9.
 
 6.13.0 - (February 13, 2020)
 ----------
