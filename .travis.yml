@@ -15,7 +15,7 @@ jobs:
   include:
     - stage: lint jest and compile
       script:
-        # clear the cache of any old build artifacts
+        # clear the cache of any old build artifacts.
         - rm -rf ./travis-build
         # These can't be built in parallel because the cache is a single object and you can't add to it in parallel
         - npm run compile:prod -- --env.disableAggregateThemes --output-path $TRAVIS_BUILD_DIR/travis-build/default
