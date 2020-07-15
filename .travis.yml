@@ -17,8 +17,6 @@ jobs:
       script:
         # clear the cache of any old build artifacts
         - rm -rf ./travis-build
-        - npm run lint
-        - npm run jest
         # These can't be built in parallel because the cache is a single object and you can't add to it in parallel
         - npm run compile:prod -- --env.disableAggregateThemes --output-path $TRAVIS_BUILD_DIR/travis-build/default
     # Split out all the wdio runs to not eat up all the travis executors at once.
@@ -31,7 +29,7 @@ jobs:
       install: skip
       script:
         # using the travis env section to set env variables seems to break cache
-        - CI= SITE=$TRAVIS_BUILD_DIR/travis-build/default npm run wdio-default
+        - CI= SITE=$TRAVIS_BUILD_DIR/travis-build/default node node_modules/.bin/wdio
 
     - stage: deploy
       script: skip
