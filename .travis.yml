@@ -29,7 +29,7 @@ jobs:
       install: skip
       script:
         # using the travis env section to set env variables seems to break cache
-        - CI= SITE=$TRAVIS_BUILD_DIR/travis-build/default node node_modules/.bin/wdio node_modules/terra-toolkit/config/wdio/wdio.conf.js
+        - CI= SITE=$TRAVIS_BUILD_DIR/travis-build/default node node_modules/.bin/wdio node_modules/terra-toolkit/config/wdio/wdio.conf.js --host localhost
 
     - stage: deploy
       script: skip
